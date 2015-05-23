@@ -1,0 +1,50 @@
+<?php
+
+/*
+ * This file is part of the Black package.
+ *
+ * (c) Alexandre Balmes <alexandre@lablackroom.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Black\Bundle\EmailBundle\Application\DependencyInjection;
+
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\DependencyInjection\Loader;
+
+/**
+ * Class BlackEmailExtension
+ *
+ * This is the class that loads and manages your bundle configuration
+ *
+ * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
+ *
+ * @author  Alexandre 'pocky' Balmes <alexandre@lablackroom.com>
+ * @license http://opensource.org/licenses/mit-license.php MIT
+ */
+class BlackEmailExtension extends Extension
+{
+    /**
+     * {@inheritDoc}
+     */
+    public function load(array $configs, ContainerBuilder $container)
+    {
+        $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../../Resources/config'));
+
+        foreach ([] as $service) {
+            $loader->load(sprintf('%s.xml', $service));
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function getAlias()
+    {
+        return 'black_email';
+    }
+}

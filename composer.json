@@ -1,0 +1,25 @@
+{
+    "name": "black/email-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony BlackEmailBundle",
+    "keywords": ["Symfony2", "Bundle", "Black", "Email"],
+    "homepage": "http://www.lablackroom.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexandre 'pocky' Balmes",
+            "email": "alexandre@lablackroom.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "black/common-bundle": "~0.3.0",
+        "black/email": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Black\\Bundle\\EmailBundle\\": ""
+        }
+    }
+}
