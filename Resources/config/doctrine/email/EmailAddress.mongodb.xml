@@ -6,7 +6,6 @@
         xsi:schemaLocation="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping
                         http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping.xsd">
 
-
     <embedded-document name="Email\EmailAddress">
         <field fieldName="recipient" type="string" />
         <field fieldName="domain" type="string" />
